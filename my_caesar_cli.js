@@ -101,6 +101,9 @@ function readFromFile(file, func) {
   });
 
   readerStream.on("error", function (err) {
-    console.log(err.stack);
+    console.log(
+      "An error occurred during file reading, please check that file does exist."
+    );
+    process.exit();
   });
 }
